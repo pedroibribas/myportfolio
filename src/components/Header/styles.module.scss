@@ -30,6 +30,10 @@
   nav {
     flex: 4;
 
+    @media (max-width: 720px) {
+      display: none;
+    }
+
     a {
       display: inline-block;
       position: relative;
@@ -68,6 +72,25 @@
     }
   }
 
+  .hamburgerBtn {
+    display: none;
+    background: none;
+
+    @media (max-width: 720px) {
+      display: flex;
+    }
+
+    svg {
+      color: var(--clr-txt-light);
+      font-size: 1.5rem;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
   .btnPrimary {
     display: inline-block;
     height: 2.5rem;
@@ -79,10 +102,95 @@
     line-height: 2.5rem;
     transition: all 0.2s;
 
+    @media (max-width: 720px) {
+      display: none;
+    }
+
     &:hover {
       border: 1px solid var(--clr-acc-alt);
       background: var(--clr-bg);
       color: var(--clr-acc-alt);
+    }
+  }
+}
+
+.menu {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 3rem;
+  padding: 0 1rem;
+  background: var(--clr-header);
+
+  @media (max-width: 720px) {
+    display: flex;
+    align-items: center;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex: 1;
+
+    a {
+      display: inline-block;
+      position: relative;
+      height: 3rem;
+      color: var(--clr-txt-light);
+      line-height: 3rem;
+      transition: color 0.2s;
+
+      &.active {
+        color: var(--clr-txt);
+        font-weight: 600;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          border-radius: 3px 3px 0 0;
+          background-color: var(--clr-acc);
+        }
+      }
+    }
+  }
+
+  .btnPrimary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 2rem;
+    padding: 0 0.75rem;
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    background: var(--clr-acc);
+    color: var(--clr-txt-btn);
+    line-height: 2rem;
+    transition: all 0.2s;
+
+    &:hover {
+      border: 1px solid var(--clr-acc-alt);
+      background: var(--clr-bg);
+      color: var(--clr-acc-alt);
+    }
+  }
+
+  .closeBtn {
+    background: none;
+    margin-left: 2rem;
+
+    svg {
+      display: flex;
+      color: var(--clr-txt-light);
+      font-size: 1.5rem;
+
+      &:hover {
+        color: #fff;
+      }
     }
   }
 }

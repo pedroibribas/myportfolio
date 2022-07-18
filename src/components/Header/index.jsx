@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { CgClose } from 'react-icons/cg';
 import { ImDownload } from 'react-icons/im';
 import { Link, useLocation } from 'react-router-dom';
 import { Socials } from '../Socials';
@@ -11,8 +13,9 @@ export function Header() {
     isHomeActive: false,
     isProjectsActive: false,
   });
-
   const { isHomeActive, isProjectsActive } = active;
+
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const path = useLocation().pathname;
 
@@ -38,6 +41,14 @@ export function Header() {
     };
   }, [path]);
 
+  const handleOpenMenu = () => {
+    setMenuOpen(true);
+  };
+
+  const handleCloseMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
@@ -47,6 +58,7 @@ export function Header() {
           </Link>
         </div>
         <div className={styles.socialsBox}><Socials /></div>
+
         <nav>
           <Link className={isHomeActive ? styles.active : ''} to='/'>Home</Link>
           <Link className={isProjectsActive ? styles.active : ''} to='/projects'>Projetos</Link>
@@ -54,7 +66,34 @@ export function Header() {
         <a href={cv} className={styles.btnPrimary} download='pedro-ribas-cv'>
           <ImDownload /> Currículo
         </a>
+
+        <button className={styles.hamburgerBtn} onClick={handleOpenMenu}>
+          <GiHamburgerMenu />
+        </button>
+
       </div>
+
+      {menuOpen && (
+        <div className={styles.menu}>
+          <ul>
+            <li>
+              <Link className={isHomeActive ? styles.active : ''} to='/'>Home</Link>
+            </li>
+            <li>
+              <Link className={isProjectsActive ? styles.active : ''} to='/projects'>Projetos</Link>
+            </li>
+          </ul>
+
+          <a href={cv} className={styles.btnPrimary} download='pedro-ribas-cv'>
+            <ImDownload /> Currículo
+          </a>
+
+          <button className={styles.closeBtn} onClick={handleCloseMenu}>
+            <CgClose />
+          </button>
+        </div>
+      )}
+
     </header>
   );
 };

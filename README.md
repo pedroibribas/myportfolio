@@ -3,7 +3,7 @@
 
 ## Introdução
 
-Este é um projeto de portfolio frontend desenvolvido com com ReactJS.
+Este é um projeto de portfolio frontend desenvolvido com ReactJS.
 
 ## Screenshots
 
