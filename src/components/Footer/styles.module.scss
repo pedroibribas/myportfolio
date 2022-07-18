@@ -1,28 +1,12 @@
 .footerContent {
   display: flex;
   justify-content: center;
-  position: fixed;
-  bottom: 10px;
-  left: calc(50% - 50px);
+  background: var(--clr-bg);
+  height: var(--h-footer);
 
-  li {
-    transition: transform 0.2s;
-
-    & + li {
-      margin-left: 0.75rem;
-    }
-
-    &:hover {
-      transform: translateY(-5px);
-    }
-  }
-
-  a {
+  small {
     color: var(--clr-txt-light);
-    font-size: 1.5rem;
-
-    &:hover {
-      color: var(--clr-accent);
-    }
+    font-weight: 300;
+    line-height: var(--h-footer);
   }
 }

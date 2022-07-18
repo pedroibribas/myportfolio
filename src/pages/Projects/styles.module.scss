@@ -1,9 +1,15 @@
+.projectsContainer {
+  padding: 5rem 0;
+  background: var(--clr-bg-alt);
+  color: var(--clr-txt-alt);
+}
+
 .projectsContent {
   max-width: 1120px;
-  margin: 5rem auto;
+  margin: 0 auto;
   padding: 0 1rem;
 
-  h2 {
+  h1 {
     position: relative;
     color: var(--clr-accent);
     overflow: hidden;
@@ -26,32 +32,28 @@
     padding: 0 1.2rem;
     border-radius: 0.4rem;
     border: 1px solid transparent;
-    background: var(--clr-accent);
+    background: var(--clr-acc);
     color: var(--clr-txt-btn);
     font-weight: 600;
     line-height: 3rem;
     transition: all 0.2s;
 
     &:hover {
-      border: 1px solid var(--clr-accent);
-      background: var(--clr-bg);
-      color: var(--clr-accent);
+      border: 1px solid var(--clr-acc);
+      background: var(--clr-bg-alt);
+      color: var(--clr-acc);
     }
   }
 }
 
 .projectsCollection {
-  margin-top: 2rem;
+  margin-top: 4rem;
 
   .projectItem {
     display: flex;
 
     & + .projectItem {
-      margin-top: 1rem;
-
-      @media (max-width: 720px) {
-        margin-top: 4rem;
-      }
+      margin-top: 4rem;
     }
 
     @media (max-width: 720px) {
@@ -61,26 +63,22 @@
     .imageBox {
       flex: 50%;
       position: relative;
-      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -5px;
+        bottom: -5px;
+        width: 100%;
+        height: 100%;
+        background: var(--clr-acc-alt);
+      }
 
       img {
+        position: relative;
         display: block;
         width: 100%;
         height: 100%;
-      }
-
-      .overlay {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(110, 110, 110, 0.5);
-        transition: background 0.2s;
-
-        &:hover {
-          background: transparent;
-        }
       }
     }
 
@@ -93,29 +91,44 @@
         margin-top: 1rem;
       }
 
-      h3 {
-        font-size: 1.5rem;
+      .small {
+        margin-right: 0.5rem;
+        font-size: 0.9rem;
         font-weight: 600;
       }
 
+      .title {
+        display: flex;
+
+        h3 {
+          display: flex;
+          padding: 0.25rem 0.5rem;
+          border: 1px solid black;
+          background: #fff;
+        }
+      }
+
       p {
+        display: flex;
         margin-top: 1rem;
-        font-weight: 300;
-        line-height: 2;
+        font-weight: 400;
+        line-height: 1.75;
       }
 
       .links {
+        display: flex;
         margin-top: 1rem;
       }
 
       svg {
+        display: flex;
         margin-right: 0.5rem;
-        color: var(--clr-txt-light);
-        font-size: 1.5rem;
+        color: #000;
+        font-size: 2rem;
         transition: color 0.2s;
 
         &:hover {
-          color: var(--clr-accent);
+          color: var(--clr-acc-alt);
         }
       }
     }

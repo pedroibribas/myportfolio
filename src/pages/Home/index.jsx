@@ -17,21 +17,27 @@ export function Home() {
           <a href={cv} className={styles.btnPrimary} download='pedro-ribas-cv'>
             <ImDownload /> Currículo
           </a>
+          <a className={styles.btnSecondaryOutline} href="mailto:pedroibribas@gmail.com">
+            Contato
+          </a>
         </div>
 
         <div className={styles.homeAboutContent}>
           <h2>Sobre mim</h2>
           <p>
-            Desde criança gostando de tecnologia, comecei com programação no ano de 2021.
+            Formado em Direito &#40;2015&#41;, mas desde criança gostando de tecnologia, comecei a estudar programação no ano de 2021 para transitar de carreira e seguir um sonho.
             <br />
             <br />
-            Sou especializado no desenvolvimento web frontend, para a criação das interfaces visuais de sites e aplicativos.
+            Minha formação em programação passa principalmente pelos cursos <i>The Complete 2022 Web Development Bootcamp</i> &#40;Udemy&#41;, <i>Modern JavaScript From The Beggining</i> &#40;Udemy&#41;, e pela <i>Trilha Ignite da plataforma da Rocketseat</i>, além de outros cursos também pela Udemy.
             <br />
             <br />
-            Minha principal ferramenta é o <strong>ReactJS</strong>. O ReactJS é amplamente popular no mercado, e permite criar interfaces modernas e extremamente reativas às ações do usuário.
+            Sou especializado no desenvolvimento web frontend, para a criação das interfaces visuais de sites e aplicativos. Até o momento, meu portfolio se baseia em projetos fictícios para fins pedagógicos.
             <br />
             <br />
-            Para projetos fullstack, eu utilizo <strong>NodeJS/Express</strong> e <strong>MongoDB</strong>.
+            Minha principal ferramenta de trabalho é o <strong>ReactJS</strong>. O ReactJS é amplamente popular no mercado, e permite criar interfaces modernas e extremamente reativas às ações do usuário. Para projetos fullstack, eu utilizo <strong>NodeJS/Express</strong> e <strong>MongoDB</strong>.
+            <br />
+            <br />
+            Não tenho problemas em aprender novas tecnologias. Estou acostumado a aprender novidades e desejo aprofundar ainda mais na programação.
           </p>
         </div>
       </div>

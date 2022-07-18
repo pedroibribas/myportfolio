@@ -8,29 +8,35 @@
   text-decoration: none;
 }
 
-// Medium size (tablet)
-@media (max-width: 1080px) {
-  html {
+html {
+  -webkit-font-smoothing: antialiased;
+
+  @media (max-width: 1080px) {
     font-size: 93.75%;
   }
-}
 
-// Small size (mobile)
-@media (max-width: 720px) {
-  html {
+  @media (max-width: 720px) {
     font-size: 87.5%;
   }
 }
 
 :root {
-  --clr-bg: #121214;
-  --clr-txt: #ffffff;
+  // Palette
+  --clr-bg: #0e0b16;
+  --clr-bg-alt: #e7dfdd;
+  --clr-header: #0e0b16;
+  --clr-txt: #fff;
   --clr-txt-light: #a8a8b3;
-  --clr-txt-btn: #29292e;
-  --clr-accent: #eba417;
+  --clr-txt-alt: #141414;
+  --clr-txt-btn: #fff;
+  --clr-txt-btn-alt: #29292e;
+  --clr-txt-acc: #cf6ff5;
+  --clr-acc: #4717f6;
+  --clr-acc-alt: #a239ca;
 
-  --gray-700: #29292e;
-  --yellow-300: #ffd369;
+  // Sizes
+  --h-header: 5rem;
+  --h-footer: 6rem;
 }
 
 body {
@@ -53,6 +59,10 @@ h1 {
 
 h2 {
   font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 h5 {

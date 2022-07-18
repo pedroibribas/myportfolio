@@ -1,18 +1,22 @@
 .homeContainer {
   display: flex;
-  align-items: center;
   justify-content: center;
   max-width: 1120px;
-  margin: 5rem auto 0;
-  padding: 0 2rem;
+  min-height: 800px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
 
   @media (max-width: 720px) {
     flex-direction: column;
-    gap: 5rem;
   }
 
   .homeHeroContent {
     flex: 50%;
+    margin-top: 9rem;
+
+    @media (max-width: 720px) {
+      margin-top: 6rem;
+    }
 
     small {
       color: var(--clr-txt-light);
@@ -40,26 +44,45 @@
       padding: 0 1.2rem;
       border-radius: 0.4rem;
       border: 1px solid transparent;
-      background: var(--clr-accent);
+      background: var(--clr-acc);
       color: var(--clr-txt-btn);
-      font-weight: 600;
       line-height: 3rem;
       transition: all 0.2s;
 
       &:hover {
-        border: 1px solid var(--clr-accent);
+        border: 1px solid var(--clr-acc-alt);
         background: var(--clr-bg);
-        color: var(--clr-accent);
+        color: var(--clr-acc-alt);
+      }
+    }
+
+    .btnSecondaryOutline {
+      display: inline-block;
+      height: 3rem;
+      margin-left: 1rem;
+      padding: 0 1.2rem;
+      border-radius: 0.4rem;
+      border: 1px solid var(--clr-acc-alt);
+      background: var(--clr-bg);
+      color: var(--clr-acc-alt);
+      line-height: 3rem;
+      transition: all 0.2s;
+
+      &:hover {
+        border: 1px solid transparent;
+        background: var(--clr-acc-alt);
+        color: var(--clr-txt);
       }
     }
   }
 
   .homeAboutContent {
     flex: 50%;
+    margin-top: 5rem;
 
     h2 {
       position: relative;
-      color: var(--clr-accent);
+      color: #4c4c4c;
       overflow: hidden;
 
       &::after {
@@ -69,21 +92,22 @@
         width: 100%;
         height: 1px;
         margin-left: 1rem;
-        background: rgba(95, 95, 95, 0.5);
+        background: #4c4c4c;
       }
     }
 
     p {
       margin-top: 1.5rem;
+      margin-left: 1rem;
       font-weight: 300;
       line-height: 2;
 
       strong {
-        color: var(--clr-accent);
+        color: var(--clr-txt-acc);
       }
 
       @media (max-width: 720px) {
-        text-align: center;
+        margin-left: 0;
       }
     }
   }

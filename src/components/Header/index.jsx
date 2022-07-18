@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { BsCodeSquare } from "react-icons/bs";
 import { ImDownload } from 'react-icons/im';
 import { Link, useLocation } from 'react-router-dom';
+import { Socials } from '../Socials';
 import cv from '../../assets/cv.pdf';
+import logo from '../../assets/logo.png';
 import styles from './styles.module.scss';
 
 export function Header() {
@@ -40,7 +41,12 @@ export function Header() {
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
-        <BsCodeSquare className={styles.headerLogo} />
+        <div className={styles.logoBox}>
+          <Link to='/'>
+            <img src={logo} alt='Logo do portfolio' />
+          </Link>
+        </div>
+        <div className={styles.socialsBox}><Socials /></div>
         <nav>
           <Link className={isHomeActive ? styles.active : ''} to='/'>Home</Link>
           <Link className={isProjectsActive ? styles.active : ''} to='/projects'>Projetos</Link>
