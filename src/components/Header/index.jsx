@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { CgClose } from 'react-icons/cg';
 import { ImDownload } from 'react-icons/im';
 import { Link, useLocation } from 'react-router-dom';
 import { Socials } from '../Socials';
 import cv from '../../assets/cv.pdf';
 import logo from '../../assets/logo.png';
 import styles from './styles.module.scss';
+import { Menu } from './Menu';
 
 export function Header() {
   const [active, setActive] = useState({
@@ -14,9 +14,7 @@ export function Header() {
     isProjectsActive: false,
   });
   const { isHomeActive, isProjectsActive } = active;
-
   const [menuOpen, setMenuOpen] = useState(false);
-
   const path = useLocation().pathname;
 
   useEffect(() => {
@@ -57,12 +55,24 @@ export function Header() {
             <img src={logo} alt='Logo do portfolio' />
           </Link>
         </div>
-        <div className={styles.socialsBox}><Socials /></div>
+
+        <div className={styles.socialsBox}>
+          <Socials />
+        </div>
 
         <nav>
-          <Link className={isHomeActive ? styles.active : ''} to='/'>Home</Link>
-          <Link className={isProjectsActive ? styles.active : ''} to='/projects'>Projetos</Link>
+          <Link
+            className={isHomeActive ? styles.active : ''}
+            to='/'>
+            Home
+          </Link>
+          <Link
+            className={isProjectsActive ? styles.active : ''}
+            to='/projects'>
+            Projetos
+          </Link>
         </nav>
+
         <a href={cv} className={styles.btnPrimary} download='pedro-ribas-cv'>
           <ImDownload /> Currículo
         </a>
@@ -70,28 +80,14 @@ export function Header() {
         <button className={styles.hamburgerBtn} onClick={handleOpenMenu}>
           <GiHamburgerMenu />
         </button>
-
       </div>
 
       {menuOpen && (
-        <div className={styles.menu}>
-          <ul>
-            <li>
-              <Link className={isHomeActive ? styles.active : ''} to='/'>Home</Link>
-            </li>
-            <li>
-              <Link className={isProjectsActive ? styles.active : ''} to='/projects'>Projetos</Link>
-            </li>
-          </ul>
-
-          <a href={cv} className={styles.btnPrimary} download='pedro-ribas-cv'>
-            <ImDownload /> Currículo
-          </a>
-
-          <button className={styles.closeBtn} onClick={handleCloseMenu}>
-            <CgClose />
-          </button>
-        </div>
+        <Menu
+          isHomeActive={isHomeActive}
+          isProjectsActive={isProjectsActive}
+          onCloseMenu={handleCloseMenu}
+        />
       )}
 
     </header>

@@ -12,5 +12,15 @@
     &:hover {
       color: var(--clr-acc-alt);
     }
+
+    @media (max-width: 1080px) {
+      &:hover {
+        color: var(--clr-txt-light);
+      }
+
+      &:active {
+        color: var(--clr-acc-alt);
+      }
+    }
   }
 }
